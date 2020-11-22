@@ -4,7 +4,7 @@
 | Jigar Hira, Tritai Nguyen, Ian Flores |
 | University of California, Irvine      |
 |                                       |
-| Version 1.0                           |
+| Version 1.1                           |
 *---------------------------------------*
 
 Audio dataset used to train the audio classification model used in the EAR-UCI project.
@@ -14,6 +14,9 @@ This dataset is comprised of audio samples from the following public datasets:
     ESC-50          (glass breaking, other)
     UrbanSound8K    (gunshot, other)
     FSD50K          (screaming, other)
+
+
+All sound samples are in ./audio and spectrograms generated from the samples are found in ./spectrograms
 
 
 There are four sample categories:
