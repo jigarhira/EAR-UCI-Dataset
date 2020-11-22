@@ -4,16 +4,14 @@
 | Jigar Hira, Tritai Nguyen, Ian Flores |
 | University of California, Irvine      |
 |                                       |
-| Version 1.1                           |
+| Version 2.0                           |
 *---------------------------------------*
 
 Audio dataset used to train the audio classification model used in the EAR-UCI project.
 
 
 This dataset is comprised of audio samples from the following public datasets:
-    ESC-50          (glass breaking, other)
-    UrbanSound8K    (gunshot, other)
-    FSD50K          (screaming, other)
+    MIVIA Audio Events Dataset  (glass breaking, gunshot, screaming, other)
 
 
 All sound samples are in ./audio and spectrograms generated from the samples are found in ./spectrograms
@@ -33,7 +31,7 @@ Note: The "Other" samples were randomly selected audio samples from any of the o
 
 
 Dataset is split into 10 folds (fold1-9 for training and fold10 for validation).
-Each fold contains 4 samples from each category (16 WAV files per fold).
+Each fold contains 600 samples from each category (2400 WAV files per fold).
 
 
 Each sample is named as follows: {sample_id}-{fold}-{category_id}.wav
