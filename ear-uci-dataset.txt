@@ -30,8 +30,8 @@ There are four sample categories:
 Note: The "Other" samples were randomly selected audio samples from any of the other categories included in the ESC-50 dataset.
 
 
-Dataset is split into 10 folds (fold1-9 for training and fold10 for validation).
-Each fold contains 600 samples from each category (2400 WAV files per fold).
+Dataset is split into 10 folds (fold0-8 for training and fold9 for validation).
+Each fold contains 600 samples from each category (2400 WAV files per fold, 24000 samples total).
 
 
 Each sample is named as follows: {sample_id}-{fold}-{category_id}.wav
