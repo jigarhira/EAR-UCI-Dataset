@@ -4,16 +4,38 @@
 | Jigar Hira, Tritai Nguyen, Ian Flores |
 | University of California, Irvine      |
 |                                       |
-| Version 1.1                           |
+| Version 3.0                           |
 *---------------------------------------*
+
+Class       Dataset         Total
+---------------------------------------
+glass       fsd50k          347
+gunshot     urbansound8k    374
+scream      fsd50k          283
+
+
+Unique:		250 per class
+Augmented:	4000 per class
+		(1 -> 16)
+		time position (4 time positions)
+		background mix (4 background mixes): 2 params = background amp, background noise type
+
+Other:
+		250 unique
+		4000 augmented: same method as other classes	
+
+
+
+
+
+
 
 Audio dataset used to train the audio classification model used in the EAR-UCI project.
 
 
 This dataset is comprised of audio samples from the following public datasets:
-    ESC-50          (glass breaking, other)
-    UrbanSound8K    (gunshot, other)
-    FSD50K          (screaming, other)
+    FSD50K          (glass break, scream, other)
+    UrbanSound8K    (gunshot)
 
 
 All sound samples are in ./audio and spectrograms generated from the samples are found in ./spectrograms
@@ -29,14 +51,15 @@ There are four sample categories:
     Screaming       |   3   |
    
 
-Note: The "Other" samples were randomly selected audio samples from any of the other categories included in the ESC-50 dataset.
+Note: The "Other" samples were randomly selected audio samples from any of the other categories in the FSD50K dataset.
 
 
-Dataset is split into 10 folds (fold1-9 for training and fold10 for validation).
-Each fold contains 4 samples from each category (16 WAV files per fold).
+Dataset has 1000 unique samples split into a training set and a validation set.
+    Training set contains 900 unique samples (225 samples per category).
+    Validation set contains 100 unique samples (25 samples per category).
 
 
-Each sample is named as follows: {sample_id}-{fold}-{category_id}.wav
+Each sample is named as follows: {sample_id}-{category_id}-{set_type}.wav
     {sample_id}:    Overall audio sample number. Sample ID is unique to each sound file.
-    {fold}:         Fold number. Corresponds to the fold number the sample belongs to.
     {category_id}:  Number which corresponds to one of the four categories.
+    {set_type}:     Train or validation set, 0 for training set and 1 for validation set.
